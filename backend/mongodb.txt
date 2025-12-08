@@ -1,0 +1,37 @@
+collection
+show dbs //it shows all database
+show collections //it contains documents and fields
+db.dropDatabase()
+db.insertOne
+db.users.insertOne({name: "jai"})
+
+show dbs
+show collections
+db.dropDatabase()
+db.users.insertOne({name: "jai"})
+db.users.insertMany({age:26},{age:30})
+db.users.find()
+db.users.find({name:"jai"}) 
+db.users.findOne({name:"jai"})
+db.users.countDocuments({name:"jai"})
+
+//update
+db.users.updateOne({age:20},{$set:{age:21}})
+db.users.updateOne({age:20},{$inc:{age:21}})
+db.users.updateMany({},{$rename:{age:"years"}})
+
+db.users.find().limit(2)  //limit is used to limit the number of documents
+db.users.find().skip(2)   //skip is used to skip the number of documents
+
+
+//delete
+db.users.deleteOne({age:20})
+
+db.users.find({name:{$eq: "jai"}})    //eq is equalto
+
+
+db.users.find({age:{$gt:12}})    //gt is for greater than
+db.users.find({age:{$lt:12}})    //lt is for less than                  
+db.users.find({age:{$gte:12}})    //gte is for greater than equal to
+
+db.users.find(($or :[{age:12},{name:"jai"}]))
