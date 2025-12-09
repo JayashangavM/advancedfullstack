@@ -1,13 +1,14 @@
 const mongoose = require('mongoose');
-const foodschema = new mongoose.Schema({
+
+const foodSchema = new mongoose.Schema({
     foodname: {
         type: String,
         required: true
     },
-    daysScinceItAte: {
+    daysSinceIAte: {
         type: Number,
-        required: true  
+        required: true
     }
 });
-const food = mongoose.model('food', foodschema);
-module.exports = food;
+
+module.exports = mongoose.model('food', foodSchema);
